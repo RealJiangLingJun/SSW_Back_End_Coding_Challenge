@@ -1,0 +1,30 @@
+create database if not exists SSW_Back_End_Coding_Challenge
+default character set = 'utf8mb4'
+default collate 'utf8mb4_general_ci';
+
+use SSW_Back_End_Coding_Challenge;
+
+# 产品名称、产品编码、产品规格、产品库存数量、创建时间
+create table product(
+	p_name varchar(200) COMMENT '产品名称',
+	p_code varchar(200) COMMENT '产品编码',
+	p_spec varchar(200) COMMENT '产品规格',
+	p_stock int COMMENT '产品库存',
+	p_cTime varchar(100) COMMENT '产品创建时间'
+);
+
+# drop table product;
+
+insert into product values
+("iPhone", "001", "13", 100, DATE_FORMAT(now(),"%Y-%m-%d %H:%i:%s %p") ),
+("iPad", "002", "2019", 101, DATE_FORMAT(now(),"%Y-%m-%d %H:%i:%s %p") ),
+("iPod", "003", "1", 102, DATE_FORMAT(now(),"%Y-%m-%d %H:%i:%s %p") );
+
+select * from product;
+
+
+select * from product where p_name like '%e%' or p_code like '%2%' or p_spec like '%1%';
+
+
+select * from product where p_name like '%iPhone%;
+
